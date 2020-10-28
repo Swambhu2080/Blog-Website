@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no,user-scalable=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Post 2</title>
+  </head>
+  <body>
+    <header class="main_header">
+      <div class="d-flex justify-content-center align-items-center flex-column py-4">
+        <h1 class="main_heading text-center">TECH INFO BLOG</h1>
+        <p class="main_heading__para">Welcome to my  <span class="text-capitalize bg-dark py-2 px-2  text-white"> World of Code!</span></p>
+      </div>
+    </header>
+    <style type="text/css">
+      .Code_block{
+        padding: 5rem;
+      }
+      .Qeustion{
+        padding: 3rem;
+      }
+      .Qeustion h2{
+        font-size: 2.5rem; 
+      }
+      .back_btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 3rem;  
+        margin: 4rem;
+        border:none;
+        font-size: 2rem;
+        border-radius: 2rem;
+        padding: 0.8rem 2rem;
+        background-color:#bbe1fa;
+        outline: none;
+      }
+      .back_btn a{
+        color: grey;
+      }
+      .back_btn a i{
+        padding: 0.5rem;
+      }
+       @media(max-width: 768px ){
+        .body{
+          overflow-x: scroll;
+        }
+        .Qeustion h2{
+        font-size: 2rem; 
+      }
+      .Code h2{
+        padding-left:  2rem;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+      }
+    </style>
+    <section class="body container col-lg-9 col-md-11 col-sm-12 col-12 mx-auto shadow bg-light">
+        <div class="row">
+      <div class="Code_block d-flex justify-content-center align-items-start flex-column">
+        <div class=" Qeustion">
+          <p>
+              The salary scheme for a company is given as follows:<br>
+                <br>
+                Salary range for grade A: $700 - $899<br>
+                Salary range for grade B: $600 - $799<br>
+                Salary range for grade C: $500 - $649<br>
+                <br>
+                A person whose salary is between $600 and $649 is in grade C if his merit points are below 10, otherwise he is in grade B. A person whose salary is between $700 and $799 is in grade B if his merit points are below 20, otherwise, he is in grade A. Write a program to read in a person’s salary and his merit points, and displays his grade.
+
+           </p>
+        </div>
+        <div class="Code pl-5">
+          <h1 class="font-weight-bold">
+            SOURCE CODE:
+          </h1>
+          <h2 style="white-space: pre">
+            class p3{
+                 public static void main(String[] args) {
+                    
+                    int s = Integer.parseInt(args[0]);
+                    int m = Integer.parseInt(args[1]);
+
+                     if(s>=700  && s<= 999){
+                        if(m<20 && (s>=700  && s<=799)){
+                            System.out.println(" Grade B \n");
+                        }
+                        else{
+                            System.out.println(" Grade A \n");
+                        }
+                    }
+                    else if(s>=600  && s<= 799){
+                        if( m<10 && (s>=600  && s<=649)){
+                            System.out.println(" Grade C \n");
+                        }
+                        else{
+                            System.out.println(" Grade B \n");
+                        }
+                    }
+                    else if(s>= 500 && s<=649){
+                        System.out.println(" Grade C \n");
+                    }
+                }
+            }
+
+          </h2>
+        </div>
+        <div class="output pl-5">
+          <div class="py-4">
+            <h1 class="font-weight-bold">OUTPUT :</h1>
+          </div>
+          <div>
+            <img src="images/10.png">
+          </div>
+        </div>
+        <div class=" back_btn">
+          <a href="index.html"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> GO BACK</a>
+        </div>
+
+      </div>
+  </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

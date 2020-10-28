@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no,user-scalable=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Post 1</title>
+  </head>
+  <body>
+    <header class="main_header">
+      <div class="d-flex justify-content-center align-items-center flex-column py-4">
+        <h1 class="main_heading text-center">TECH INFO BLOG</h1>
+        <p class="main_heading__para">Welcome to my  <span class="text-capitalize bg-dark py-2 px-2  text-white"> World of Code!</span></p>
+      </div>
+    </header>
+    <style type="text/css">
+      .Code_block{
+        padding: 5rem;
+      }
+      .Qeustion{
+        padding: 3rem;
+      }
+      .Qeustion h2{
+        font-size: 2.5rem; 
+      }
+      .back_btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 3rem;  
+        margin: 4rem;
+        border:none;
+        font-size: 2rem;
+        border-radius: 2rem;
+        padding: 0.8rem 2rem;
+        background-color:#bbe1fa;
+        outline: none;
+      }
+      .back_btn a{
+        color: grey;
+      }
+      .back_btn a i{
+        padding: 0.5rem;
+      }
+      @media(max-width: 768px ){
+        .body{
+          overflow-x: scroll;
+        }
+        .Qeustion h2{
+        font-size: 2rem; 
+      }
+      .Code h2{
+        padding-left:  2rem;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+      }
+    </style>
+
+    <section class="body container  col-lg-9 col-md-11 col-sm-12 col-12 mx-auto shadow bg-light">
+      <div class="row">
+
+      <div class="Code_block d-flex justify-content-center align-items-start flex-column">
+        <div class="Qeustion">
+          <h2>
+             Given two vessels, one of which can accommodate 'a' liters of water and the other which can accommodate 'b' liters of water, determine the number of steps required to obtain exactly 'c' liters of water in one of the vessels.
+           </h2>
+        </div>
+
+        <div class="Code pl-5 ">
+          <h1 class="font-weight-bold">
+            SOURCE CODE:
+          </h1>
+          <h2 style="white-space: pre" >
+
+            #include bits/stdc++.h
+                using namespace std;
+                int main()
+                {
+                int n = 3, m = 5, d = 4;
+                printf("Minimum number of steps required is %d",
+                minSteps(m, n, d));
+                return 0;
+                }
+                int gcd(int a, int b)
+                {
+                if (b==0)
+                return a;
+                return gcd(b, a%b);
+                }
+                int pour(int fromCap, int toCap, int d)
+                {
+                int from = fromCap;
+                int to = 0;
+                int step = 1; 
+                while (from != d && to != d)
+                {
+                int temp = min(from, toCap - to);
+                to += temp;
+                from -= temp;
+                step++;
+                if (from == d || to == d)
+                break;
+                if (from == 0)
+                {
+                from = fromCap;
+                step++;
+                }
+                if (to == toCap)
+                {
+                to = 0;
+                step++;
+                }
+                }
+                return step;
+                }
+                int minSteps(int m, int n, int d)
+                {
+                if (m > n)
+                swap(m, n);
+                if (d > n)
+                return -1;
+                if ((d % gcd(n,m)) != 0)
+                return -1;
+                return min(pour(n,m,d),pour(m,n,d)); 
+                }
+          </h2>
+        </div>
+        <div class="output pl-5">
+
+          <div class="py-4">
+            <h1 class="font-weight-bold">OUTPUT :</h1>
+          </div>
+          <div>
+            <img src="images/9.png">
+          </div>
+
+        </div>
+
+        <div class=" back_btn">
+          <a href="index.html"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> GO BACK</a>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
